@@ -25,7 +25,7 @@
     <div class="nav-container">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="logo-wrapper">
-                <img src="{{ asset('images/scti.jfif') }}" alt="Fil Products Logo" class="logo">
+                <img src="{{ asset('images/scti.jfif') }}" alt="SCTI Logo" class="logo">
                 <div class="brand-info">
                     <span class="brand-label">Surigao Cable Television Inc.</span>
                 </div>
