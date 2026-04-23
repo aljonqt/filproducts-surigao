@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col brand-info">
-            <h3 class="footer-logo">Fil Products <span>Surigao</span></h3>
+            <h3 class="footer-logo">Surigao Cable Television Inc.</h3>
             <p>
                 Connecting homes and businesses across the region with high-speed fiber technology and premium entertainment.
             </p>
@@ -53,7 +53,7 @@
 
     <div class="footer-bottom">
         <div class="bottom-container">
-            <p>© {{ date('Y') }} Fil Products Surigao. All Rights Reserved.</p>
+            <p>© {{ date('Y') }} Surigao Cable Television Inc. All Rights Reserved.</p>
             <div class="footer-legal">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>

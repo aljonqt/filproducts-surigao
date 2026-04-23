@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fil Products Surigao</title>
+    <title>Surigao Cable Television Inc.</title>
     <link rel="icon" type="image/png" href="{{ asset('images/fil-products-logo.png') }}">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -27,8 +27,7 @@
             <a href="{{ route('home') }}" class="logo-wrapper">
                 <img src="{{ asset('images/fil-products-logo.png') }}" alt="Fil Products Logo" class="logo">
                 <div class="brand-info">
-                    <span class="brand-label">Fil Products</span>
-                    <span class="brand-sub">Surigao</span>
+                    <span class="brand-label">Surigao Cable Television Inc.</span>
                 </div>
             </a>
         </div>
@@ -163,7 +162,7 @@
         <div class="modal-body">
             <a href="{{ $fbButuan }}" target="_blank" class="modal-item butuan">
                 <span class="icon"><i class="fab fa-facebook-f" style="color:#003366;"></i></span>
-                <div><strong>Fil Products Surigao</strong><span>Messenger</span></div>
+                <div><strong>Surigao Cable Television Inc.</strong><span>Messenger</span></div>
             </a>
         </div>
     </div>
