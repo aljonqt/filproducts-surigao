@@ -17,7 +17,7 @@
             <ul class="footer-links">
                 <li>
                     <a href="tel:09173205871">
-                        <i class="fas fa-phone"></i> 0999-998-4435
+                        <i class="fas fa-phone"></i> 970-969-8059
                     </a>
                 </li>
                 <li>

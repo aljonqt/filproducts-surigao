@@ -30,7 +30,7 @@
                     <i class="fas fa-phone-alt"></i>
                     <div>
                         <strong>Contact Numbers</strong>
-                        <p>0999-998-4435</p>
+                        <p>970-969-8059</p>
                         <p>0910-317-9964</p>
                     </div>
                 </div>

@@ -96,9 +96,8 @@ public function submitComplaint(Request $request)
         $mail = new PHPMailer(true);
         $this->configureSMTP($mail);
 
-        $mail->setFrom(env('MAIL_USERNAME'), 'Fil Products Butuan');
-        $mail->addAddress('Info.bxu@filproducts.ph');
-        $mail->addAddress('it.butuan@filproducts.ph');
+        $mail->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
+        $mail->addAddress('info.sctvi@filproducts.ph');
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
@@ -133,7 +132,7 @@ public function submitComplaint(Request $request)
             </table>
 
             <br>
-            <p>This complaint was submitted through the Fil Products website.</p>
+            <p>This complaint was submitted through the Surigao Cable Television Inc. website.</p>
         </div>
         ";
 
@@ -146,7 +145,7 @@ public function submitComplaint(Request $request)
         $mailCustomer = new PHPMailer(true);
         $this->configureSMTP($mailCustomer);
 
-        $mailCustomer->setFrom(env('MAIL_USERNAME'), 'Fil Products Butuan');
+        $mailCustomer->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
         $mailCustomer->addAddress($email);
 
         $mailCustomer->isHTML(true);
@@ -159,36 +158,22 @@ public function submitComplaint(Request $request)
 
             <p>Dear <strong>{$name}</strong>,</p>
 
-            <p>Thank you for contacting <strong>Fil Products Butuan</strong>.</p>
+            <p>Thank you for contacting <strong>Surigao Cable Television Inc.</strong>.</p>
 
             <p>We have successfully received your complaint. Our team will review it and get back to you as soon as possible.</p>
 
             <p>If necessary, we may contact you for additional details.</p>
 
             <br>
-            <p>Best regards,<br>
-            Fil Products Team</p>
+            <p>Best regards,<br>Surigao Cable Television Inc. Team</p>
         </div>
         ";
 
         $mailCustomer->send();
 
-                $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('https://script.google.com/macros/s/AKfycbzfAt2WDTmTKhf2HbaWY-8_-D8yjzH69jpfhchmC8f0tqxgBpM9qAF2ex_scwu850Y7cQ/exec', [
-            'mobile_number' => $request->mobile_number ?? '',
-            'account_name' => $name,
-            'address' => $address,
-            'fieldjob_type' => $remarks,
-            'remarks' => '',
-            'prepared_by' => 'Website',
-            'team_deployed' => '',
-            'date_completed' => ''
-        ]);
 
-        Log::info('STATUS: ' . $response->status());
-        Log::info('BODY: ' . $response->body());
 
+    
     } catch (\Exception $e) {
 
         // ✅ LOG ERROR (VERY IMPORTANT)
@@ -230,17 +215,17 @@ $request->validate([
     }
 
     /* ================= BRANCH LOGIC ================= */
-    $branch = 'butuan';
+    $branch = 'surigao';
 
     $branches = [
-        'butuan' => [
-            'name' => 'FIL PRODUCTS SERVICE TELEVISION, INC.',
-            'address' => 'N&D Bldg., Alviola Village Baan KM., Butuan City',
-            'contact' => '0917-320-5871 / 0938-320-5871'
+        'surigao' => [
+            'name' => 'SURIGAO CABLE TELEVISION INC.',
+            'address' => 'G/F, Diegas Bldg, Borromeo St, Surigao, Surigao del Norte',
+            'contact' => '0999-998-4435 / 0910-317-9964'
         ],
     ];
 
-    $branchData = $branches['butuan'];
+    $branchData = $branches['surigao'];
 
     $companyName = $request->companyname;
     $natureBiz   = $request->natureofbusiness;
@@ -304,7 +289,7 @@ $pdf->AddPage();
 
 /* ================= HEADER ================= */
 
-$logo = public_path('images/fil-products-logo.png');
+$logo = public_path('images/new.png');
 if (file_exists($logo)) {
     $pdf->Image($logo, 15, 14, 20);
 }
@@ -316,7 +301,7 @@ $pdf->Cell(216, 7, $branchData['name'], 0, 1, 'C');
 $pdf->SetFont('helvetica', '', 10);
 $pdf->Cell(0, 5, strtoupper($branchData['address']), 0, 1, 'C');
 $pdf->Cell(0, 5, 'CEL. NOS.: ' . $branchData['contact'], 0, 1, 'C');
-$pdf->Cell(0,5,'Email: Info.bxu@filproducts.ph | Website: www.butuan.filproducts-cyg.com',0,1,'C');
+$pdf->Cell(0,5,'Email: info.sctvi@filproducts.ph | Website: https://sctvi.filproducts-cyg.com/',0,1,'C');
 
 $pdf->Ln(15);
 
@@ -513,7 +498,7 @@ $declaration = "
     plans, products and/or services chosen by me in this application form, as well as the inclusions and special features of such
     plans, products and/or services and that any enrolment I have indicated herein have been knowingly made by me.
 
-    3. I hereby authorize FIL PRODUCTS SERVICE TELEVISION OF BUTUAN, INC. (hereinafter you) or any person or
+    3. I hereby authorize SURIGAO CABLE TELEVISION INC. (hereinafter you) or any person or
     entity authorized by you, to verify any information about me and/or documents available from whatever source including but
     not limited to (i) your subsidiaries, affiliates, and/or their service providers: or (ii) banks, credit card companies, and other
     lending and/or financial institution, and I hereby authorize the holder, controller and processor of such information and/or
@@ -660,7 +645,7 @@ file_put_contents($pdfPath,$pdfContent);
    BRANCH EMAIL MAP
 ========================== */
 $branchEmails = [
-    'butuan' => 'Info.bxu@filproducts.ph',
+    'surigao' => 'info.sctvi@filproducts.ph',
 ];
 
 /* =========================
@@ -678,7 +663,7 @@ $subscription = htmlspecialchars($subscription ?? '');
 /* =========================
    DETERMINE RECIPIENT
 ========================== */
-$branchRecipient = $branchEmails[$selectedBranch] ?? 'Info.bxu@filproducts.ph';
+$branchRecipient = $branchEmails[$selectedBranch] ?? 'info.sctvi@filproducts.ph';
 
 /* =========================
    SEND EMAIL
@@ -698,7 +683,7 @@ $mail->SMTPOptions = [
 ];
 
 /* FROM */
-$mail->setFrom(env('MAIL_USERNAME'), 'Fil Products Butuan');
+$mail->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
 
 /* HEADERS */
 $mail->Sender = env('MAIL_USERNAME');
@@ -717,8 +702,7 @@ if (!empty($email)) {
 /* ✅ SEND TO BRANCH */
 $mail->addAddress($branchRecipient);
 
-$mail->addAddress('Info.bxu@filproducts.ph');
-$mail->addAddress('it.butuan@filproducts.ph');
+$mail->addAddress('info.sctvi@filproducts.ph');
 
 
 /* =========================
@@ -759,7 +743,7 @@ $mail->Body = "
 
     <br>
     <p style='font-size:12px;color:#555;'>
-        This application was submitted via Fil Products System.
+        This application was submitted via Surigao Cable Television Inc. System.
     </p>
 </div>
 ";
@@ -771,7 +755,7 @@ $mail->Body = "
 ========================== */
 
 // ONLY attach for admin email
-$mail->addAddress('Info.bxu@filproducts.ph');
+$mail->addAddress('info.sctvi@filproducts.ph');
 
 // Attach PDF (optional: keep or remove if large)
 if (!empty($pdfContent) && !empty($fileName)) {
@@ -810,7 +794,7 @@ $mail->send();
 $mailCustomer = new PHPMailer(true);
 $this->configureSMTP($mailCustomer);
 
-$mailCustomer->setFrom(env('MAIL_USERNAME'), 'Fil Products Butuan');
+$mailCustomer->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
 $mailCustomer->addAddress($email);
 
 $mailCustomer->isHTML(true);
@@ -826,7 +810,7 @@ $mailCustomer->Body = "
 <p>Our team will review your application and contact you shortly.</p>
 
 <br>
-<p>Fil Products Team</p>
+<p>Surigao Cable Television Inc. Team</p>
 ";
 
 $mailCustomer->Body .= "</ul>";
@@ -855,17 +839,17 @@ public function submitFilbizUpgrade(Request $request)
     }
 
     /* ================= BRANCH LOGIC ================= */
-    $branch = 'butuan';
+    $branch = 'surigao';
 
     $branches = [
-            'butuan' => [
-                'name' => 'FIL PRODUCTS SERVICE TELEVISION, INC.',
-                'address' => 'N&D Bldg., Alviola Village Baan KM., Butuan City',
-                'contact' => '0917-320-5871 / 0938-320-5871'
+            'surigao' => [
+                'name' => 'SURIGAO CABLE TELEVISION INC.',
+                'address' => 'G/F, Diegas Bldg, Borromeo St, Surigao, Surigao del Norte',
+                'contact' => '0999-998-4435 / 0910-317-9964'
             ],
         ];
 
-    $branchData = $branches['butuan'];
+    $branchData = $branches['surigao'];
 
     $companyName = $request->companyname;
     $natureBiz   = $request->natureofbusiness;
@@ -905,7 +889,7 @@ public function submitFilbizUpgrade(Request $request)
 
 /* ================= HEADER ================= */
 
-$logo = public_path('images/fil-products-logo.png');
+$logo = public_path('images/new.png');
 if (file_exists($logo)) {
     $pdf->Image($logo, 15, 14, 20);
 }
@@ -917,7 +901,7 @@ $pdf->Cell(216, 7, $branchData['name'], 0, 1, 'C');
 $pdf->SetFont('helvetica', '', 10);
 $pdf->Cell(0, 5, strtoupper($branchData['address']), 0, 1, 'C');
 $pdf->Cell(0, 5, 'CEL. NOS.: ' . $branchData['contact'], 0, 1, 'C');
-$pdf->Cell(0,5,'Email: Info.bxu@filproducts.ph | Website: www.butuan.filproducts-cyg.com',0,1,'C');
+$pdf->Cell(0,5,'Email: info.sctvi@filproducts.ph | Website: www.sctvi.filproducts-cyg.com/',0,1,'C');
 $pdf->Ln(15);
 
 
@@ -1117,7 +1101,7 @@ $declaration = "
     plans, products and/or services chosen by me in this application form, as well as the inclusions and special features of such
     plans, products and/or services and that any enrolment I have indicated herein have been knowingly made by me.
 
-    3. I hereby authorize FIL PRODUCTS SERVICE TELEVISION OF BUTUAN, INC. (hereinafter you) or any person or
+    3. I hereby authorize SURIGAO CABLE TELEVISION INC. (hereinafter you) or any person or
     entity authorized by you, to verify any information about me and/or documents available from whatever source including but
     not limited to (i) your subsidiaries, affiliates, and/or their service providers: or (ii) banks, credit card companies, and other
     lending and/or financial institution, and I hereby authorize the holder, controller and processor of such information and/or
@@ -1232,10 +1216,10 @@ file_put_contents($pdfPath,$pdfContent);
 
 
 /* =========================
-   FIXED BRANCH (BUTUAN ONLY)
+   FIXED BRANCH
 ========================== */
-$branch = 'Butuan';
-$branchRecipient = 'Info.bxu@filproducts.ph';
+$branch = 'surigao';
+$branchRecipient = 'info.sctvi@filproducts.ph';
 
 /* =========================
    SANITIZE INPUT
@@ -1264,7 +1248,7 @@ $mail->SMTPOptions = [
 ];
 
 /* FROM */
-$mail->setFrom(env('MAIL_USERNAME'), 'Fil Products Butuan');
+$mail->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
 
 /* HEADERS */
 $mail->Sender = env('MAIL_USERNAME');
@@ -1274,9 +1258,8 @@ $mail->addCustomHeader('X-Mailer', 'PHP/' . phpversion());
    RECIPIENTS (ADMIN ONLY)
 ========================== */
 
-// ✅ Send same formatted email to internal team
-$mail->addAddress('Info.bxu@filproducts.ph');
-$mail->addAddress('it.butuan@filproducts.ph');
+$mail->addAddress('info.sctvi@filproducts.ph');
+
 
 // Optional: reply goes to customer
 if (!empty($email)) {
@@ -1333,7 +1316,7 @@ $mail->Body = "
 
     <br>
     <p style='font-size:12px;color:#555;'>
-        This upgrade request was submitted via Fil Products System.
+        This upgrade request was submitted via Surigao Cable Television Inc System.
     </p>
 </div>
 ";
@@ -1356,7 +1339,7 @@ $mail->send();
 $mailCustomer = new PHPMailer(true);
 $this->configureSMTP($mailCustomer);
 
-$mailCustomer->setFrom(env('MAIL_USERNAME'), 'Fil Products Butuan');
+$mailCustomer->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
 $mailCustomer->addAddress($email);
 
 $mailCustomer->isHTML(true);
@@ -1367,10 +1350,10 @@ $mailCustomer->Body = "
 <p>Thank you {$companyName},</p>
 
 <p>Your Filbiz upgrade request has been successfully submitted.</p>
-<p>Our Butuan team will review your request and contact you shortly.</p>
+<p>Our Surigao team will review your request and contact you shortly.</p>
 
 <br>
-<p>Fil Products Butuan</p>
+<p>Surigao Cable Television Inc.</p>
 ";
 
 $mailCustomer->send();
@@ -1383,7 +1366,7 @@ return redirect()
     ->with('success', '
     ✅ Your Filbiz Upgrade request has been successfully submitted.<br>
     📧 A copy has been sent to your email.<br>
-    Our Butuan team will contact you shortly.
+    Our Surigao team will contact you shortly.
     ');
 }
 
@@ -1395,17 +1378,17 @@ public function submitResidential(Request $request)
     if (!$request->declaration_agree) {
         return back()->with('error','You must agree to the Subscriber Declaration');
     }
-        $branch = 'butuan';
+        $branch = 'surigao';
 
         $branches = [
-        'butuan' => [
-            'name' => 'FIL PRODUCTS SERVICE TELEVISION, INC.',
-            'address' => 'N&D Bldg., Alviola Village Baan KM., Butuan City',
-            'contact' => '0917-320-5871 / 0938-320-5871'
+        'surigao' => [
+            'name' => 'SURIGAO CABLE TELEVISION INC.',
+            'address' => 'G/F, Diegas Bldg, Borromeo St, Surigao, Surigao del Norte',
+            'contact' => '0999-998-4435 / 0910-317-9964'
         ],
     ];
 
-    $branchData = $branches['butuan'];
+    $branchData = $branches['surigao'];
 
     try {
         
@@ -1520,7 +1503,7 @@ $pdf->AddPage();
 
 /* ================= HEADER ================= */
 
-$logo = public_path('images/fil-products-logo.png');
+$logo = public_path('images/new.png');
 if(file_exists($logo)){
     $pdf->Image($logo,15,12,22);
 }
@@ -1532,7 +1515,7 @@ $pdf->Cell(216, 7, $branchData['name'], 0, 1, 'C');
 $pdf->SetFont('helvetica','',10);
 $pdf->Cell(0, 5, strtoupper($branchData['address']), 0, 1, 'C');
 $pdf->Cell(0, 5, 'CEL. NOS.: ' . $branchData['contact'], 0, 1, 'C');
-$pdf->Cell(0,5,'Email: Info.bxu@filproducts.ph | Website: www.butuan.filproducts-cyg.com',0,1,'C');
+$pdf->Cell(0,5,'Email: info.sctvi@filproducts.ph | Website: www.sctvi.filproducts-cyg.com',0,1,'C');
 $pdf->Ln(4);
 
 /* ================= APPLICATION FORM ================= */
@@ -1724,7 +1707,7 @@ $declaration = "
     plans, products and/or services chosen by me in this application form, as well as the inclusions and special features of such
     plans, products and/or services and that any enrolment I have indicated herein have been knowingly made by me.
 
-    3. I hereby authorize FIL PRODUCTS SERVICE TELEVISION OF BUTUAN, INC. (hereinafter you) or any person or
+    3. I hereby authorize SURIGAO CABLE TELEVISION INC. (hereinafter you) or any person or
     entity authorized by you, to verify any information about me and/or documents available from whatever source including but
     not limited to (i) your subsidiaries, affiliates, and/or their service providers: or (ii) banks, credit card companies, and other
     lending and/or financial institution, and I hereby authorize the holder, controller and processor of such information and/or
@@ -1910,10 +1893,10 @@ file_put_contents($pdfPath,$pdfContent);
 
 
 /* =========================
-   FIXED BRANCH (BUTUAN ONLY)
+   FIXED BRANCH
 ========================== */
-$branch = 'Butuan';
-$branchRecipient = 'Info.bxu@filproducts.ph';
+$branch = 'surigao';
+$branchRecipient = 'info.sctvi@filproducts.ph';
 
 /* =========================
    DATA
@@ -1950,15 +1933,13 @@ $mail->SMTPOptions = [
 ];
 
 /* FROM */
-$mail->setFrom('noreply@filproducts-cyg.com', 'Fil Products Butuan');
+$mail->setFrom('noreply@filproducts-cyg.com', 'Surigao Cable Television Inc.');
 
 /* =========================
    RECIPIENTS (ADMIN ONLY)
 ========================== */
 
-// ✅ Internal recipients (same formatted email)
-$mail->addAddress('Info.bxu@filproducts.ph');
-$mail->addAddress('it.butuan@filproducts.ph');
+$mail->addAddress('info.sctvi@filproducts.ph');
 
 // Optional: reply goes to customer
 if (!empty($customerEmail)) {
@@ -2007,7 +1988,7 @@ $mail->Body = "
 
     <br>
     <p style='font-size:12px;color:#555;'>
-        This application was submitted via Fil Products System.
+        This application was submitted via Surigao Cable Television Inc. System.
     </p>
 </div>
 ";
@@ -2051,7 +2032,7 @@ $mailCustomer->Password = '8kKAahOE*.E,7uJZ';
 $mailCustomer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 $mailCustomer->Port = 465;
 
-$mailCustomer->setFrom('noreply@filproducts-cyg.com', 'Fil Products Butuan');
+$mailCustomer->setFrom('noreply@filproducts-cyg.com', 'Surigao Cable Television Inc.');
 $mailCustomer->addAddress($customerEmail);
 
 $mailCustomer->isHTML(true);
@@ -2062,10 +2043,10 @@ $mailCustomer->Body = "
 <p>Thank you {$fullNameSafe},</p>
 
 <p>Your residential application has been successfully submitted.</p>
-<p>Our Butuan team will review your application and contact you shortly.</p>
+<p>Our Surigao team will review your application and contact you shortly.</p>
 
 <br>
-<p>Fil Products Butuan</p>
+<p>Surigao Cable Television Inc.</p>
 ";
 
 $mailCustomer->send();
@@ -2079,7 +2060,7 @@ return redirect()
     ->with('success',
         '✅ Your Residential Application has been successfully submitted.<br>
         📧 A copy has been sent to your email.<br>
-        Our Butuan team will contact you shortly.'
+        Our Surigao team will contact you shortly.'
     );
 
 } catch (\Exception $e) {
@@ -2100,17 +2081,17 @@ public function submitResidentialUpgrade(Request $request)
         return back()->with('error','You must agree to the Subscriber Declaration');
     }
 
-        $branch = 'butuan';
+        $branch = 'surigao';
 
         $branches = [
-        'butuan' => [
-            'name' => 'FIL PRODUCTS SERVICE TELEVISION, INC.',
-            'address' => 'N&D Bldg., Alviola Village Baan KM., Butuan City',
-            'contact' => '0917-320-5871 / 0938-320-5871'
+        'surigao' => [
+            'name' => 'SURIGAO CABLE TELEVISION INC.',
+            'address' => 'G/F, Diegas Bldg, Borromeo St, Surigao, Surigao del Norte',
+            'contact' => '0999-998-4435 / 0910-317-9964'
         ],
     ];
 
-    $branchData = $branches['butuan'];
+    $branchData = $branches['surigao'];
 
     try {
 
@@ -2197,7 +2178,7 @@ $pdf->AddPage();
 
 /* ================= HEADER ================= */
 
-$logo = public_path('images/fil-products-logo.png');
+$logo = public_path('images/new.png');
 if(file_exists($logo)){
     $pdf->Image($logo,15,12,22);
 }
@@ -2209,7 +2190,7 @@ $pdf->Cell(216, 7, $branchData['name'], 0, 1, 'C');
 $pdf->SetFont('helvetica','',10);
 $pdf->Cell(0, 5, strtoupper($branchData['address']), 0, 1, 'C');
 $pdf->Cell(0, 5, 'CEL. NOS.: ' . $branchData['contact'], 0, 1, 'C');
-$pdf->Cell(0,5,'Email: Info.bxu@filproducts.ph | Website: www.butuan.filproducts-cyg.com',0,1,'C');
+$pdf->Cell(0,5,'Email: info.sctvi@filproducts.ph | Website: www.sctvi.filproducts-cyg.com',0,1,'C');
 $pdf->Ln(4);
 
 /* ================= APPLICATION FORM ================= */
@@ -2334,7 +2315,7 @@ $declaration = "
     plans, products and/or services chosen by me in this application form, as well as the inclusions and special features of such
     plans, products and/or services and that any enrolment I have indicated herein have been knowingly made by me.
 
-    3. I hereby authorize FIL PRODUCTS SERVICE TELEVISION OF BUTUAN, INC. (hereinafter you) or any person or
+    3. I hereby authorize SURIGAO CABLE TELEVISION INC. (hereinafter you) or any person or
     entity authorized by you, to verify any information about me and/or documents available from whatever source including but
     not limited to (i) your subsidiaries, affiliates, and/or their service providers: or (ii) banks, credit card companies, and other
     lending and/or financial institution, and I hereby authorize the holder, controller and processor of such information and/or
@@ -2485,10 +2466,10 @@ file_put_contents($pdfPath,$pdfContent);
 
 
 /* =========================
-   FIXED BRANCH (BUTUAN ONLY)
+   FIXED BRANCH
 ========================== */
-$branch = 'Butuan';
-$branchRecipient = 'Info.bxu@filproducts.ph';
+$branch = 'surigao';
+$branchRecipient = 'info.sctvi@filproducts.ph';
 
 /* =========================
    DATA
@@ -2526,15 +2507,13 @@ $mail->SMTPOptions = [
 ];
 
 /* FROM */
-$mail->setFrom('noreply@filproducts-cyg.com', 'Fil Products Butuan');
+$mail->setFrom('noreply@filproducts-cyg.com', 'Surigao Cable Television Inc.');
 
 /* =========================
    RECIPIENTS (ADMIN ONLY)
 ========================== */
 
-// ✅ Internal recipients (same formatted email)
-$mail->addAddress('Info.bxu@filproducts.ph');
-$mail->addAddress('it.butuan@filproducts.ph');
+$mail->addAddress('info.sctvi@filproducts.ph');
 
 // Optional: reply goes to customer
 if (!empty($customerEmail)) {
@@ -2581,7 +2560,7 @@ $mail->Body = "
 
     <br>
     <p style='font-size:12px;color:#555;'>
-        This upgrade request was submitted via Fil Products System.
+        This upgrade request was submitted via Surigao Cable Television Inc System.
     </p>
 </div>
 ";
@@ -2612,7 +2591,7 @@ $mailCustomer->Password = '8kKAahOE*.E,7uJZ';
 $mailCustomer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 $mailCustomer->Port = 465;
 
-$mailCustomer->setFrom('noreply@filproducts-cyg.com', 'Fil Products Butuan');
+$mailCustomer->setFrom('noreply@filproducts-cyg.com', 'Surigao Cable Television Inc.');
 $mailCustomer->addAddress($customerEmail);
 
 $mailCustomer->isHTML(true);
@@ -2623,10 +2602,10 @@ $mailCustomer->Body = "
 <p>Thank you {$fullNameSafe},</p>
 
 <p>Your residential upgrade request has been successfully submitted.</p>
-<p>Our Butuan team will review your request and contact you shortly.</p>
+<p>Our Surigao team will review your request and contact you shortly.</p>
 
 <br>
-<p>Fil Products Butuan</p>
+<p>Surigao Cable Television Inc.</p>
 ";
 
 $mailCustomer->send();
@@ -2640,7 +2619,7 @@ return redirect()
     ->with('success',
         '✅ Your Residential Upgrade request has been successfully submitted.<br>
         📧 A copy has been sent to your email.<br>
-        Our Butuan team will contact you shortly.'
+        Our Surigao team will contact you shortly.'
     );
 
 } catch (\Exception $e) {
