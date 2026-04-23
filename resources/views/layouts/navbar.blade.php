@@ -4,7 +4,7 @@
     $isLeyte = request()->routeIs('leyte.*');
 
     /* FACEBOOK LINKS */
-    $fbButuan = "https://m.me/filproductsbutuan";
+    $fbSurigao = "https://m.me/surigaocabletv";
 @endphp
 
 <!DOCTYPE html>
@@ -160,7 +160,7 @@
             <button onclick="closeModal('chatModal')">✕</button>
         </div>
         <div class="modal-body">
-            <a href="{{ $fbButuan }}" target="_blank" class="modal-item butuan">
+            <a href="{{ $fbSurigao }}" target="_blank" class="modal-item surigao">
                 <span class="icon"><i class="fab fa-facebook-f" style="color:#003366;"></i></span>
                 <div><strong>Surigao Cable Television Inc.</strong><span>Messenger</span></div>
             </a>
