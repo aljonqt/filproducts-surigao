@@ -128,11 +128,11 @@
         <div class="modal-body">
             <a href="tel:+639173205871" class="modal-item globe">
                 <span class="icon"><i class="fas fa-mobile-alt"></i></span>
-                <div><strong>Globe</strong><span>0948-921-1463</span></div>
+                <div><strong></strong><span>0999-998-4435</span></div>
             </a>
             <a href="tel:+639383205871" class="modal-item smart">
                 <span class="icon"><i class="fas fa-mobile-alt"></i></span>
-                <div><strong>Smart</strong><span>0910-245-0720</span></div>
+                <div><strong></strong><span>0910-317-9964</span></div>
             </a>
         </div>
     </div>
