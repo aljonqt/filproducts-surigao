@@ -13,9 +13,9 @@
 
 <div class="about-header">
 
-<h1>About Fil Products</h1>
+<h1>About Surigao Cable Television Inc.</h1>
 
-<p>Delivering reliable internet and cable television services across Butuan .</p>
+<p>Delivering reliable internet and cable television services across Surigao .</p>
 
 </div>
 
@@ -24,11 +24,11 @@
 
 <div class="about-text">
 
-<h2>FIL PRODUCTS BUTUAN.</h2>
+<h2>Surigao Cable Television Inc.</h2>
 
 <p>
-Fil Products Butuan, is a trusted provider of
-high-speed internet and cable television services in Butuan . We are committed
+Surigao Cable Television Inc., is a trusted provider of
+high-speed internet and cable television services in Surigao . We are committed
 to delivering reliable connectivity, modern technology, and exceptional
 customer service to homes, businesses, and communities.
 </p>
@@ -70,7 +70,7 @@ experience.
 <h3>Our Vision</h3>
 
 <p>
-To become the leading connectivity provider in Butuan  by delivering
+To become the leading connectivity provider in Surigao Cable Television Inc.  by delivering
 innovative digital services and empowering communities through technology.
 </p>
 
@@ -83,7 +83,7 @@ innovative digital services and empowering communities through technology.
 
 <div class="why">
 
-<h2>Why Choose Fil Products?</h2>
+<h2>Why Choose Surigao Cable Television Inc.?</h2>
 
 <div class="why-grid">
 

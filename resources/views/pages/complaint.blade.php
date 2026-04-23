@@ -81,7 +81,7 @@
 
         <div class="help-box">
             <strong><i class="fas fa-info-circle"></i> Prefer to talk to us?</strong><br><br>
-            Visit a <strong>Fil Products Office</strong> or call our hotlines for immediate troubleshooting. We are committed to getting you back online as fast as possible.
+            Visit a <strong>Surigao Cable Television Inc. Office</strong> or call our hotlines for immediate troubleshooting. We are committed to getting you back online as fast as possible.
         </div>
     </div>
 </div>
