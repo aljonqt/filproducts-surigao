@@ -94,7 +94,7 @@
             <div class="header-user">
                 <img src="{{ asset('images/new.png') }}" alt="Logo">
                 <div>
-                    <strong>Fil Support</strong>
+                    <strong>SCTI Support</strong>
                     <div class="status-wrap"><span class="dot"></span> <small>Online Now</small></div>
                 </div>
             </div>
