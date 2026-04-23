@@ -12,8 +12,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fil Products Butuan</title>
-    <link rel="icon" type="image/png" href="{{ asset('public/images/fil-products-logo.png') }}">
+    <title>Fil Products Surigao</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/fil-products-logo.png') }}">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
@@ -25,10 +25,10 @@
     <div class="nav-container">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="logo-wrapper">
-                <img src="{{ asset('public/images/fil-products-logo.png') }}" alt="Fil Products Logo" class="logo">
+                <img src="{{ asset('images/fil-products-logo.png') }}" alt="Fil Products Logo" class="logo">
                 <div class="brand-info">
                     <span class="brand-label">Fil Products</span>
-                    <span class="brand-sub">Butuan</span>
+                    <span class="brand-sub">Surigao</span>
                 </div>
             </a>
         </div>
@@ -93,7 +93,7 @@
     <div id="chat-panel">
         <div class="chat-header">
             <div class="header-user">
-                <img src="{{ asset('public/images/fil-products-logo.png') }}" alt="Logo">
+                <img src="{{ asset('images/fil-products-logo.png') }}" alt="Logo">
                 <div>
                     <strong>Fil Support</strong>
                     <div class="status-wrap"><span class="dot"></span> <small>Online Now</small></div>
@@ -163,7 +163,7 @@
         <div class="modal-body">
             <a href="{{ $fbButuan }}" target="_blank" class="modal-item butuan">
                 <span class="icon"><i class="fab fa-facebook-f" style="color:#003366;"></i></span>
-                <div><strong>Fil Products Butuan</strong><span>Messenger</span></div>
+                <div><strong>Fil Products Surigao</strong><span>Messenger</span></div>
             </a>
         </div>
     </div>

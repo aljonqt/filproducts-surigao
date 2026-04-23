@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col brand-info">
-            <h3 class="footer-logo">Fil Products <span>Butuan</span></h3>
+            <h3 class="footer-logo">Fil Products <span>Surigao</span></h3>
             <p>
                 Connecting homes and businesses across the region with high-speed fiber technology and premium entertainment.
             </p>
@@ -17,22 +17,17 @@
             <ul class="footer-links">
                 <li>
                     <a href="tel:09173205871">
-                        <i class="fas fa-phone"></i> 0948-921-1463
+                        <i class="fas fa-phone"></i> 0999-998-4435
                     </a>
                 </li>
                 <li>
                     <a href="tel:09383205871">
-                        <i class="fas fa-phone"></i> 0910-245-0720
+                        <i class="fas fa-phone"></i> 0910-317-9964
                     </a>
                 </li>
                 <li>
                     <a href="mailto:info.bxu@filproducts.ph">
-                        <i class="fas fa-envelope"></i>info.bxu@filproducts.ph
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto: it.butuan@filproducts.ph">
-                        <i class="fas fa-envelope"></i>it.butuan@filproducts.ph
+                        <i class="fas fa-envelope"></i>info.sctvi@filproducts.ph
                     </a>
                 </li>
             </ul>
@@ -41,8 +36,8 @@
         <div class="footer-col">
             <h4>Visit Our Offices</h4>
             <div class="office-location">
-                <strong>Butuan City</strong>
-                <p>N&D Bldg., Alviola Village Baan KM.</p>
+                <strong>Surigao</strong>
+                <p>G/F, Diegas Bldg, Borromeo St, Surigao, Surigao del Norte</p>
             </div>
         </div>
 
@@ -50,7 +45,7 @@
             <h4>Follow Our Updates</h4>
             <div class="social-grid">
                 <a href="https://www.facebook.com/filproductsbutuan/" target="_blank" class="social-btn">
-                    <i class="fab fa-facebook-f"></i> <span>Butuan Page</span>
+                    <i class="fab fa-facebook-f"></i> <span>Surigao Page</span>
                 </a>
             </div>
         </div>
@@ -58,7 +53,7 @@
 
     <div class="footer-bottom">
         <div class="bottom-container">
-            <p>© {{ date('Y') }} Fil Products Butuan. All Rights Reserved.</p>
+            <p>© {{ date('Y') }} Fil Products Surigao. All Rights Reserved.</p>
             <div class="footer-legal">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
