@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surigao Cable Television Inc.</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/fil-products-logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/scti.jfif') }}">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
     <div class="nav-container">
         <div class="nav-left">
             <a href="{{ route('home') }}" class="logo-wrapper">
-                <img src="{{ asset('images/fil-products-logo.png') }}" alt="Fil Products Logo" class="logo">
+                <img src="{{ asset('images/scti.jfif') }}" alt="Fil Products Logo" class="logo">
                 <div class="brand-info">
                     <span class="brand-label">Surigao Cable Television Inc.</span>
                 </div>
@@ -92,7 +92,7 @@
     <div id="chat-panel">
         <div class="chat-header">
             <div class="header-user">
-                <img src="{{ asset('images/fil-products-logo.png') }}" alt="Logo">
+                <img src="{{ asset('images/scti.jfif') }}" alt="Logo">
                 <div>
                     <strong>Fil Support</strong>
                     <div class="status-wrap"><span class="dot"></span> <small>Online Now</small></div>
