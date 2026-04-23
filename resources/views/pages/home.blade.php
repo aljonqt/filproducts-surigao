@@ -49,7 +49,7 @@
         <div class="hero-visual">
             <div class="device-composition">
                 <div class="device-wrapper modem-wrap">
-                    <img src="{{ asset('public/images/modem.png') }}" alt="Fiber Router" class="floating-img">
+                    <img src="{{ asset('images/modem.png') }}" alt="Fiber Router" class="floating-img">
                     <div class="glass-card card-internet">
                         <div class="icon-box"><i class="fas fa-bolt"></i></div>
                         <div>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="device-wrapper tv-wrap">
-                    <img src="{{ asset('public/images/tv.png') }}" alt="HD Cable TV" class="floating-img delay-1">
+                    <img src="{{ asset('images/tv.png') }}" alt="HD Cable TV" class="floating-img delay-1">
                     <div class="glass-card card-tv">
                         <div class="icon-box"><i class="fas fa-tv"></i></div>
                         <div>
@@ -291,7 +291,7 @@
 
             <article class="news-card">
                 <div class="image-container">
-                    <img src="{{ asset('public/images/customersupport.png') }}" alt="Customer Portal" class="news-image">
+                    <img src="{{ asset('images/customersupport.png') }}" alt="Customer Portal" class="news-image">
                 </div>
                 <div class="news-body">
                     <span class="news-tag tech">Digital Service</span>
