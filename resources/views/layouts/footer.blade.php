@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:info.bxu@filproducts.ph">
+                    <a href="mailto:info.sctvi@filproducts.ph">
                         <i class="fas fa-envelope"></i>info.sctvi@filproducts.ph
                     </a>
                 </li>
@@ -44,7 +44,7 @@
         <div class="footer-col">
             <h4>Follow Our Updates</h4>
             <div class="social-grid">
-                <a href="https://www.facebook.com/filproductsbutuan/" target="_blank" class="social-btn">
+                <a href="https://www.facebook.com/surigaocabletv" target="_blank" class="social-btn">
                     <i class="fab fa-facebook-f"></i> <span>Surigao Page</span>
                 </a>
             </div>
