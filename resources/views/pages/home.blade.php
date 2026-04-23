@@ -81,7 +81,7 @@
             <span class="pill-badge">Our Advantages</span>
             <h2>Why Choose Surigao Cable Television Inc.?</h2>
             <p class="section-sub">
-                Reliable Internet and Cable TV built for homes and businesses in Butuan.
+                Reliable Internet and Cable TV built for homes and businesses in Surigao.
             </p>
         </div>
 
