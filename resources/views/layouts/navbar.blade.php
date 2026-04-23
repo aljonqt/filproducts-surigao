@@ -92,7 +92,7 @@
     <div id="chat-panel">
         <div class="chat-header">
             <div class="header-user">
-                <img src="{{ asset('images/scti.jfif') }}" alt="Logo">
+                <img src="{{ asset('images/new.png') }}" alt="Logo">
                 <div>
                     <strong>Fil Support</strong>
                     <div class="status-wrap"><span class="dot"></span> <small>Online Now</small></div>
