@@ -74,6 +74,7 @@ public function submitComplaint(Request $request)
     $request->validate([
         'account_name' => 'required|string|max:255',
         'address' => 'required|string',
+        'mobile_number' => 'required|string',
         'branch' => 'required|string',
         'remarks' => 'required|string',
         'email' => 'required|email'
@@ -85,6 +86,7 @@ public function submitComplaint(Request $request)
     $name = htmlspecialchars($request->account_name);
     $email = htmlspecialchars($request->email);
     $address = htmlspecialchars($request->address);
+    $mobilenumber = htmlspecialchars($request->mobile_number);
     $branch = htmlspecialchars($request->branch);
     $remarks = nl2br(htmlspecialchars($request->remarks));
 
@@ -120,6 +122,10 @@ public function submitComplaint(Request $request)
                 <tr>
                     <td style='padding:8px;'><strong>Address:</strong></td>
                     <td>{$address}</td>
+                </tr>
+                <tr>
+                    <td style='padding:8px;'><strong>Mobile Number:</strong></td>
+                    <td>{$mobilenumber}</td>
                 </tr>
                 <tr>
                     <td style='padding:8px;'><strong>Branch:</strong></td>
