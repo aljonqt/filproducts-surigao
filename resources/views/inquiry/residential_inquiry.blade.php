@@ -25,7 +25,7 @@
 @csrf
 <div class="section-header">Residential Application Form</div>
 <div class="section-title">PERSONAL INFORMATION</div>
-<input type="hidden" name="branch" value="butuan">
+<input type="hidden" name="branch" value="surigao">
 <!-- ROW 1 -->
 <div class="row row-3">
     <div class="form-group" >
