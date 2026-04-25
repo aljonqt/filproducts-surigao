@@ -100,6 +100,7 @@ public function submitComplaint(Request $request)
 
         $mail->setFrom(env('MAIL_USERNAME'), 'Surigao Cable Television Inc.');
         $mail->addAddress('info.sctvi@filproducts.ph');
+        $mail->addAddress('it.scatvi@filproducts.ph');
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
