@@ -2515,7 +2515,7 @@ if (!empty($pdfContent) && !empty($fileName)) {
 }
 
 /* LIMIT EXTRA FILES */
-$maxAttachments = 2;
+$maxAttachments = 3;
 $count = 0;
 
 foreach ($attachments as $file) {
