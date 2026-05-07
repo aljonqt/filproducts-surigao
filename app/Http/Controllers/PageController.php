@@ -17,7 +17,7 @@ class PageController extends Controller
     {
         return view('pages.home');
     }
-
+    
     public function news()
     {
         return view('pages.news');
@@ -2570,8 +2570,8 @@ $mailCustomer->send();
 return redirect()
     ->route('residential.inquiry')
     ->with('success',
-        '✅ Your Residential Application has been successfully submitted.<br>
-        📧 A copy has been sent to your email.<br>
+        '✅ Your Residential Application has been successfully submitted.
+        📧 A copy has been sent to your email.
         Our Surigao team will contact you shortly.'
     );
 
@@ -2682,7 +2682,7 @@ public function submitResidentialUpgrade(Request $request)
            GENERATE PDF
         ============================ */
 
- $pdf = new TCPDF('P','mm',array(216,330),true,'UTF-8',false);
+$pdf = new TCPDF('P','mm',array(216,330),true,'UTF-8',false);
 $pdf->SetFont('helvetica','',10); 
 $pdf->SetMargins(10,10,10);
 $pdf->SetAutoPageBreak(TRUE,10);
@@ -3125,8 +3125,8 @@ $mailCustomer->send();
 return redirect()
     ->route('residential.upgrade')
     ->with('success',
-        '✅ Your Residential Upgrade request has been successfully submitted.<br>
-        📧 A copy has been sent to your email.<br>
+        '✅ Your Residential Upgrade request has been successfully submitted.
+        📧 A copy has been sent to your email.
         Our Surigao team will contact you shortly.'
     );
 
